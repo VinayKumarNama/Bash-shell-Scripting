@@ -23,3 +23,9 @@ echo Welcome to Bash Learning
 echo Line1
 echo line2
 echo line3
+
+#in Bash we have escape sequence characters
+# \n : New Line
+# \t : Tab space
+
+echo -e "Line4\nLine5"
