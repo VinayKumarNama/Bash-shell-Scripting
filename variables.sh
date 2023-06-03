@@ -15,3 +15,4 @@ c=30
 #here $ will print the value of variables
 echo $a
 echo Value of B variable is $b
+echo Value of c variable is ${c}
