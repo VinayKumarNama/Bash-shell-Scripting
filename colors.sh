@@ -24,3 +24,11 @@ echo -e "\e[33m Welcome to Bash Learning \e[0m"
 echo -e "\e[34m Welcome to Bash Learning \e[0m"
 echo -e "\e[35m Welcome to Bash Learning \e[0m"
 echo -e "\e[36m Welcome to Bash Learning \e[0m"
+
+#printing Background colors
+
+echo -e "\e[41;32m Welcome to Bash Learning \e[0m"
+echo -e "\e[42;33m Welcome to Bash Learning \e[0m"
+echo -e "\e[44;34m Welcome to Bash Learning \e[0m"
+echo -e "\e[43;35m Welcome to Bash Learning \e[0m"
+echo -e "\e[45;36m Welcome to Bash Learning \e[0m"
