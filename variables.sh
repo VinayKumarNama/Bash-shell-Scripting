@@ -16,3 +16,4 @@ c=30
 echo $a
 echo Value of B variable is $b
 echo Value of c variable is ${c}
+echo value of the d is $d
