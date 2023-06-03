@@ -19,4 +19,8 @@
  # Ex:  
  #      echo -e "\e[COL-CODEm  Your Message To Be Printed \e[0m"
  #      echo -e "\e[32m I am printing Green Color \e[0m"
- echo -e "\e[33m Welcome to Bash Learning \e[0m"
+echo -e "\e[32m Welcome to Bash Learning \e[0m"
+echo -e "\e[33m Welcome to Bash Learning \e[0m"
+echo -e "\e[34m Welcome to Bash Learning \e[0m"
+echo -e "\e[35m Welcome to Bash Learning \e[0m"
+echo -e "\e[36m Welcome to Bash Learning \e[0m"
