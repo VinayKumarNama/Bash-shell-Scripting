@@ -28,4 +28,4 @@ echo line3
 # \n : New Line
 # \t : Tab space
 
-echo -e "Line4\nLine5"
+echo -e "Line4\nLine5\tLine6"
