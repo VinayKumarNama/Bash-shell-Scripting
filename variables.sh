@@ -14,6 +14,6 @@ c=30
 
 #here $ will print the value of variables
 echo $a
-echo Value of B variable is $b
+echo -e "Value of B variable is \e[32m;$b\e[0m"
 echo Value of c variable is ${c}
 echo value of the d is $d
