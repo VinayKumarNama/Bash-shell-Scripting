@@ -19,3 +19,7 @@
 
 echo Welcome to Bash Learning
 
+#printing multiple lines
+echo Line1
+echo line2
+echo line3
