@@ -13,3 +13,9 @@ echo "Current Job is $3"
 
 # bash scriptName.sh Val1   val2   val3    ( like this you can supply a maximum of 9 variables from the command line)
 #                     $1     $2      $3  
+
+echo $*    # $* is going to print the used variables  
+echo $@    # $@ is going to print the used variables  
+echo $$    # $$ is going to print the PID of the current proces 
+echo $#    # $# is going to pring the number of arguments
+echo $?    # $? is going to print the exit code of the last command.
