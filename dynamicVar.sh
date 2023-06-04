@@ -1,3 +1,3 @@
 #!/bin/bash
-
-echo "Good Morning and Today Date is 03June2023"
+Today_Date=$(date +%F)
+echo "Good Morning and Today Date is $Today_Date"
