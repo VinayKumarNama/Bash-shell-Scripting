@@ -11,5 +11,5 @@ echo "Current Job is $3"
 
 # We can supply the values from the command line 
 
-# bash scriptName.sh 100   200   300    ( like this you can supply a maximum of 9 variables from the command line)
-#                     $1    $2    $3  
+# bash scriptName.sh Val1   val2   val3    ( like this you can supply a maximum of 9 variables from the command line)
+#                     $1     $2      $3  
