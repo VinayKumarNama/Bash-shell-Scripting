@@ -21,4 +21,4 @@ How to authenticate from your local to GitHub ?
 2) your profile on github ---> settings ---> Developer Settings  ----> Generate Classic PAT 
 3) When you do a git push, git prompts you to enter the PAT and that's it bingo. You're authenticated.
 
-PS : PAT is sensitive and is not supposed to be shared with anyone.
+PS : PAT is sensitive and is not supposed to be shared with anyone..
