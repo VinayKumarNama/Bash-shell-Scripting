@@ -34,4 +34,14 @@ Stat $?
 echo -n "Downloading ${COMPONENT} Schema: "
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 Stat $?
-echo -e "*********** \e[32m $COMPONENT Installation Completed Successfully \e[0m ***********"
+echo -n "Extracting the ${COMPONENT} Schema :"
+cd /tmp
+unzip ${COMPONENT}.zip &>> $LOGFILE
+Stat $?
+echo -n "Injecting the ${COMPONENT} Schema :"
+cd ${COMPONENT}-main
+mongo < catalogue.js
+mongo < users.js
+Stat $?
+
+echo -e "*********** \e[33m $COMPONENT Installation Completed Successfully \e[0m ***********"
