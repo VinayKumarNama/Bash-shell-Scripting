@@ -27,8 +27,8 @@ cd /usr/share/nginx/html
 rm -rf * &>> "/tmp/${COMPONENT}.log"
 Stat $?
 echo -n "Extracting content :"
-unzip /tmp/${COMPONENT}.zip &>> $LOGFILE
-mv ${COMPONENT}-main/* . 
+unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+mv $COMPONENT-main/*  .
 mv static/* . 
 rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
