@@ -22,7 +22,18 @@ if [ $? -eq 0 ] ; then
 else
     echo -e "\e[31m Success \e[0m"
 fi
+ 
+ echo -n "Performing Cleanup :"
+ cd /usr/share/nginx/html
+ rm -rf * &>> "/tmp/${Component}.log"
+ if [ $? -eq 0 ] ; then
+    echo -e "\e[32m Success \e[0m"
+else
+    echo -e "\e[31m Success \e[0m"
+fi
 
-# yum install nginx -y
-# systemctl enable nginx
-# systemctl start nginx
+# unzip /tmp/frontend.zip
+ #mv frontend-main/* .
+ #mv static/* .
+ #rm -rf frontend-main README.md
+ #mv localhost.conf /etc/nginx/default.d/roboshop.conf
