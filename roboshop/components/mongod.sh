@@ -40,8 +40,8 @@ unzip ${COMPONENT}.zip &>> $LOGFILE
 Stat $?
 echo -n "Injecting the ${COMPONENT} Schema :"
 cd ${COMPONENT}-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js &>> $LOGFILE
+mongo < users.js     &>> $LOGFILE
 Stat $?
 
 echo -e "*********** \e[33m $COMPONENT Installation Completed Successfully \e[0m ***********"
