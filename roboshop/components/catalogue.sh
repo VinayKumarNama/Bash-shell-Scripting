@@ -1,5 +1,6 @@
 #!/bin/bash
 COMPONENT=catalogue
+APPUser=roboshop
 echo -e "*********** \e[35m $COMPONENT Installation has started \e[0m ***********"
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then 
@@ -22,9 +23,9 @@ Stat $?
 echo -n "Installaing Node Js :"
 yum install nodejs -y &>> $LOGFILE
 Stat $?
-id roboshop &>> $LOGFILE
+id ${APPUser} &>> $LOGFILE
 if [ $? -ne 0 ]; then
 echo -n "Creating the service Account :"
-useradd roboshop
+useradd ${APPUser}
 Stat $?
 fi
