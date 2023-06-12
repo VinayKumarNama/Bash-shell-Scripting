@@ -18,7 +18,7 @@ fi
 echo -n "Installing Nginx : "
 yum install nginx -y   &>> $LOGFILE
 Stat $?
-echo -n "Downloading ${COMPONENT} COMPONENT :"
+echo -n "Downloading $COMPONENT COMPONENT :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 Stat $? 
 echo -n "Performing Cleanup :"
