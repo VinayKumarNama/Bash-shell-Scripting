@@ -1,6 +1,5 @@
 #!/bin/bash
 COMPONENT = frontend
-
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then 
     echo -e "\e[31m This script is expected to be run by a root user or with a sudo privilege \e[0m"
@@ -27,7 +26,7 @@ cd /usr/share/nginx/html
 rm -rf * &>> "/tmp/${COMPONENT}.log"
 Stat $?
 echo -n "Extracting content :"
-unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+unzip /tmp/frontend.zip   &>> $LOGFILE
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
