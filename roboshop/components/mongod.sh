@@ -1,7 +1,6 @@
 #!/bin/bash
 COMPONENT=mongodb
 echo -e "*********** \e[35m $COMPONENT Installation has started \e[0m ***********"
-
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then 
     echo -e "\e[31m This script is expected to be run by a root user or with a sudo privilege \e[0m"
@@ -21,6 +20,11 @@ echo -n "Configuring ${COMPONENT} Repo :"
 curl -s -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/mongo.repo
 Stat $?
 echo -n "Installing ${COMPONENT} :"
-yum install -y mongodb-org &>> $LOGFILE
+yum install -y ${COMPONENT}-org &>> $LOGFILE
+Stat $?
+echo -n "Starting ${COMPONENT} Service :"
+systemctl enable mongod &>> $LOGFILE
+systemctl start mongod &>> $LOGFILE
 Stat $?
 
+echo -e "*********** \e[32m $COMPONENT Installation Completed Successfully \e[0m ***********"
