@@ -22,7 +22,7 @@ Stat $?
 echo -n "Installaing Node Js :"
 yum install nodejs -y &>> $LOGFILE
 Stat $?
-id roboshop
+id roboshop &>> $LOGFILE
 if [ $? -ne 0 ]; then
 echo -n "Creating the service Account :"
 useradd roboshop
