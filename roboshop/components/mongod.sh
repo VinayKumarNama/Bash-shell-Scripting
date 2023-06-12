@@ -31,4 +31,7 @@ systemctl daemon-reload mongod &>> $LOGFILE
 systemctl enable mongod &>> $LOGFILE
 systemctl restart mongod &>> $LOGFILE
 Stat $?
+echo -n "Downloading ${COMPONENT} Schema: "
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+Stat $?
 echo -e "*********** \e[32m $COMPONENT Installation Completed Successfully \e[0m ***********"
