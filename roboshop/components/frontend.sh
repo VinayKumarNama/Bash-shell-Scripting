@@ -1,5 +1,5 @@
 #!/bin/bash
-COMPONENT = frontend
+COMPONENT = "frontend"
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then 
     echo -e "\e[31m This script is expected to be run by a root user or with a sudo privilege \e[0m"
@@ -26,9 +26,9 @@ cd /usr/share/nginx/html
 rm -rf * &>> "/tmp/${COMPONENT}.log"
 Stat $?
 echo -n "Extracting content :"
-unzip /tmp/frontend.zip   &>> $LOGFILE
-mv frontend-main/* .
+unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+mv ${COMPONENT}-main/* .
 mv static/* .
-rm -rf frontend-main README.md
+rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 Stat $?
