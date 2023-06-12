@@ -22,11 +22,13 @@ Stat $?
 echo -n "Installing ${COMPONENT} :"
 yum install -y ${COMPONENT}-org &>> $LOGFILE
 Stat $?
-echo -n "Starting ${COMPONENT} Service :"
-systemctl enable mongod &>> $LOGFILE
-systemctl start mongod &>> $LOGFILE
-Stat $?
+
 echo -n "Enabling the DB visibility :"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $? 
+echo -n "Starting ${COMPONENT} Service :"
+systemctl daemon-reload mongod &>> $LOGFILE
+systemctl enable mongod &>> $LOGFILE
+systemctl restart mongod &>> $LOGFILE
+Stat $?
 echo -e "*********** \e[32m $COMPONENT Installation Completed Successfully \e[0m ***********"
