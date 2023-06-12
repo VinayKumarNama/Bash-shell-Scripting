@@ -1,7 +1,6 @@
 #!/bin/bash
 COMPONENT=frontend
 echo -e "*********** \e[35m $COMPONENT Installation has started \e[0m ***********"
-
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then 
     echo -e "\e[31m This script is expected to be run by a root user or with a sudo privilege \e[0m"
@@ -38,3 +37,4 @@ echo -n "Starting $COMPONENT Service :"
 systemctl start nginx &>> $LOGFILE
 systemctl enable nginx &>> $LOGFILE
 Stat $?
+echo -e "*********** \e[32m $COMPONENT Installation Completed Successfully \e[0m ***********"
