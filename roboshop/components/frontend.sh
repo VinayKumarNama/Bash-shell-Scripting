@@ -1,5 +1,5 @@
 #!/bin/bash
-Component = ${Component}
+Component = frontend
 
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then 
