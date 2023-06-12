@@ -16,7 +16,7 @@ else
 fi
 }
 echo -n "Installing Nginx : "
-yum install nginx -y &>> ${LogFile}
+yum install nginx -y &>> $LogFile
 Stat $?
 echo -n "Downloading ${Component} component :"
 curl -s -L -o /tmp/${Component}.zip "https://github.com/stans-robot-project/${Component}/archive/main.zip"
@@ -26,9 +26,9 @@ cd /usr/share/nginx/html
 rm -rf * &>> "/tmp/${Component}.log"
 Stat $?
 echo -n "Extracting content :"
-unzip /tmp/${Component}.zip &>> ${LogFile}
-mv ${Component}-main/* . &>> ${LogFile}
-mv static/* . &>> ${LogFile}
+unzip /tmp/${Component}.zip &>> $LogFile
+mv ${Component}-main/* . &>> $LogFile
+mv static/* . &>> $LogFile
 rm -rf ${Component}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 Stat $?
