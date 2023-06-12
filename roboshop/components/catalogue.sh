@@ -33,8 +33,8 @@ echo -n "Downloading $COMPONENT componet :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 Stat $?
 echo -n "Copying the $COMPONENT to ${APPUser} home directory "
-cd /home/${APPUser}
-unzip -o /tmp/${COMPONENT}.zip
+cd /home/${APPUser} &>> $LOGFILE
+unzip -o /tmp/${COMPONENT}.zip &>> $LOGFILE
 Stat $?
 # mv catalogue-main catalogue
 # cd /home/roboshop/catalogue
