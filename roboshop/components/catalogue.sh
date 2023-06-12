@@ -29,4 +29,14 @@ echo -n "Creating the service Account :"
 useradd ${APPUser}  &>> $LOGFILE
 Stat $?
 fi
+echo -n "Downloading $COMPONENT componet :"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+Stat $?
+echo -n "Copying the $COMPONENT to ${APPUser} home directory "
+cd /home/${APPUser}
+unzip -o /tmp/${COMPONENT}.zip
+Stat $?
+# mv catalogue-main catalogue
+# cd /home/roboshop/catalogue
+# # $ npm install
 echo -e "*********** \e[33m $COMPONENT Installation Completed Successfully \e[0m ***********"
