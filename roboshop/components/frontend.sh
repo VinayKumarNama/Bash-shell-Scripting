@@ -37,4 +37,4 @@ echo -n "Starting $COMPONENT Service :"
 systemctl start nginx &>> $LOGFILE
 systemctl enable nginx &>> $LOGFILE
 Stat $?
-echo -e "*********** \e[32m $COMPONENT Installation Completed Successfully \e[0m ***********"
+echo -e "*********** \e[33m $COMPONENT Installation Completed Successfully \e[0m ***********"
