@@ -1,5 +1,5 @@
 #!/bin/bash
-COMPONENT =frontend
+COMPONENT=frontend
 echo -e "*********** \e[35m $COMPONENT Installation has started \e[0m ***********"
 echo -m "${COMPONENT}"
 # ID=$(id -u)
