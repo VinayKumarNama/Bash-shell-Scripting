@@ -36,7 +36,7 @@ curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${CO
 Stat $?
 echo -n "Extracting the ${COMPONENT} Schema :"
 cd /tmp
-unzip ${COMPONENT}.zip &>> $LOGFILE
+unzip -o ${COMPONENT}.zip &>> $LOGFILE
 Stat $?
 echo -n "Injecting the ${COMPONENT} Schema :"
 cd ${COMPONENT}-main
