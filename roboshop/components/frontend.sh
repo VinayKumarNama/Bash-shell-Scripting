@@ -1,11 +1,12 @@
 #!/bin/bash
 Component = ${Component}
-LogFile = "/tmp/${Component}.log"
+
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then 
     echo -e "\e[31m This script is expected to be run by a root user or with a sudo privilege \e[0m"
     exit 1
 fi
+LogFile ="/tmp/${Component}.log"
 Stat()
 {
 if [ $1 -eq 0 ] ; then
