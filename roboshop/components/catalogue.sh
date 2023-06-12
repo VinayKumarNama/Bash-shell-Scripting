@@ -26,6 +26,7 @@ Stat $?
 id ${APPUser} &>> $LOGFILE
 if [ $? -ne 0 ]; then
 echo -n "Creating the service Account :"
-useradd ${APPUser}
+useradd ${APPUser}  &>> $LOGFILE
 Stat $?
 fi
+echo -e "*********** \e[33m $COMPONENT Installation Completed Successfully \e[0m ***********"
