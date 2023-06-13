@@ -37,7 +37,7 @@ cd /home/${APPUser} &>> $LOGFILE
 unzip -o /tmp/${COMPONENT}.zip &>> $LOGFILE
 Stat $?
 echo -n "Modifying the ownership :"
-    mv $COMPONENT-main/ $COMPONENT
+    mv $COMPONENT-main/ $COMPONENT &>> $LOGFILE
     chown -R $APPUSER:$APPUSER /home/${APPUser}/$COMPONENT/ &>> $LOGFILE
     Stat $?
 echo -n "Generating npm $COMPONENT artifacts :"
