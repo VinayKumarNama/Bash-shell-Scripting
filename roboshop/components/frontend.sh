@@ -39,6 +39,7 @@ sed -i -e "/$component/s/localhost/$component.roboshop.internal/"  /etc/nginx/de
 done
 Stat $?
 echo -n "Starting $COMPONENT Service :"
+systemctl daemon-reload &>> $LOGFILE
 systemctl start nginx &>> $LOGFILE
 systemctl enable nginx &>> $LOGFILE
 Stat $?
