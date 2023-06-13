@@ -34,10 +34,11 @@ curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${CO
 Stat $?
 echo -n "Copying the $COMPONENT to ${APPUser} home directory "
 cd /home/${APPUser} &>> $LOGFILE
+rm -rf ${COMPONENT} &>> $LOGFILE
 unzip -o /tmp/${COMPONENT}.zip &>> $LOGFILE
 Stat $?
 echo -n "Modifying the ownership :"
-    mv $COMPONENT-main/ $COMPONENT &>> $LOGFILE
+    mv $COMPONENT-main/ $COMPONENT 
     chown -R $APPUSER:$APPUSER /home/${APPUser}/$COMPONENT/ &>> $LOGFILE
     Stat $?
 echo -n "Generating npm $COMPONENT artifacts :"
