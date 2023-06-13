@@ -33,6 +33,11 @@ mv static/* .
 rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 Stat $?
+echo -n "Updating the Backend component reverseproxy details :"
+for component in catalogue user cart shipping payment; do
+sed -i -e "/${COMPONENT}/s/localhost/${COMPONENT}.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
+done
+Stat $?
 echo -n "Starting $COMPONENT Service :"
 systemctl start nginx &>> $LOGFILE
 systemctl enable nginx &>> $LOGFILE
