@@ -35,7 +35,7 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 Stat $?
 echo -n "Updating the Backend component reverseproxy details :"
 for component in catalogue user cart shipping payment; do
-sed -i -e "/${COMPONENT}/s/localhost/${COMPONENT}.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
+sed -i -e "/$component/s/localhost/$component.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
 done
 Stat $?
 echo -n "Starting $COMPONENT Service :"
