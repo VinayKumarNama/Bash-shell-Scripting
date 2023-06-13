@@ -47,7 +47,7 @@ echo -n "Generating npm $COMPONENT artifacts :"
     Stat $?
 echo -n "Updating the $COMPONENT  Systemd file :"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service &>> $LOGFILE
-mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service &>> $LOGFILE
+mv /home/${APPUSER}/${COMPONENT}/systemd.service  /etc/systemd/system/${COMPONENT}.service &>> $LOGFILE
 Stat $?
 echo -n "start the ${COMPONENT} Service :"
 systemctl daemon-reload &>> $LOGFILE
