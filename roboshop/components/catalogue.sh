@@ -40,8 +40,8 @@ echo -n "Modifying the ownership :"
     mv $COMPONENT-main/ $COMPONENT
     chown -R $APPUSER:$APPUSER /home/${APPUser}/$COMPONENT/ &>> $LOGFILE
     Stat $?
-echo -n "Generating npm $COMPONENT artifacts "
-    cd /home/${APPUser}/$COMPONENT/
+echo -n "Generating npm $COMPONENT artifacts :"
+    cd /home/${APPUser}/$COMPONENT/ &>> $LOGFILE
     npm install &>> $LOGFILE
     Stat $?
 echo -e "*********** \e[33m $COMPONENT Installation Completed Successfully \e[0m ***********"
