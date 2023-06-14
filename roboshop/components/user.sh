@@ -1,4 +1,18 @@
-#!/bin/bash
-COMPONENT=user
+#!/bin/bash 
+
+COMPONENT="user"
+
 source components/common.sh
-NODEJS
+
+NODEJS                          # Calling Nodej Function
+
+
+
+
+
+
+
+
+
+
+

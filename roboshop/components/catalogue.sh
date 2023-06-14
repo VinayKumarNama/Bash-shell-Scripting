@@ -1,4 +1,18 @@
-#!/bin/bash
-COMPONENT=catalogue
+#!/bin/bash 
+
+COMPONENT="catalogue"
+
 source components/common.sh
-NODEJS
+
+NODEJS                          # Calling Nodej Function
+
+
+
+
+
+
+
+
+
+
+

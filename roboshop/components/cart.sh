@@ -1,4 +1,18 @@
-#!/bin/bash
-COMPONENT=cart
+#!/bin/bash 
+
+COMPONENT="cart"
+
 source components/common.sh
-NODEJS
+
+NODEJS                          # Calling Nodej Function
+
+
+
+
+
+
+
+
+
+
+

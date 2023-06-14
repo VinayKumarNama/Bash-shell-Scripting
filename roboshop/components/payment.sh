@@ -1,4 +1,7 @@
-#!/bin/bash
-COMPONENT=payment
+#!/bin/bash 
+
+COMPONENT="payment"
+
 source components/common.sh
-PYTHON
+
+PYTHON                          # Calling Nodej Function

@@ -1,4 +1,12 @@
-#!/bin/bash
-COMPONENT=shipping
+#!/bin/bash 
+
+COMPONENT="shipping"
+
 source components/common.sh
-JAVA
+
+JAVA                          # Calling Nodej Function
+
+
+Password@7
+b52-mike
+
