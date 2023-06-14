@@ -36,7 +36,7 @@ DOWNLOAD_AND_EXTRACT()
     Stat $?
     echo -n "Modifying the ownership :"
     mv $COMPONENT-main/ $COMPONENT 
-    chown -R $APPUSER:$APPUSER /home/${APPUser}/$COMPONENT/ &>> $LOGFILE
+    chown -R $APPUser:$APPUser /home/${APPUser}/$COMPONENT/ &>> $LOGFILE
     Stat $?
 }
 NPM_INSTALL()
