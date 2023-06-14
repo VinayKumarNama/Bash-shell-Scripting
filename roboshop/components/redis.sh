@@ -4,7 +4,7 @@ source components/common.sh
 echo -e "*********** \e[35m $COMPONENT Installation has started \e[0m ***********"
 
 echo -n "Configuring ${COMPONENT} Repo :"
-curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/${COMPONENT}.repo -o /etc/yum.repos.d/${COMPONENT}.repo &>> $LOGFILE
+curl -s -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/${COMPONENT}.repo -o /etc/yum.repos.d/${COMPONENT}.repo &>> $LOGFILE
 Stat $?
 echo -n "Installing ${COMPONENT} :"
 yum install -y ${COMPONENT}-6.2.11 &>> $LOGFILE
