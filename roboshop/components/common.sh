@@ -53,7 +53,7 @@ CONFIGURE_SVC()
     mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
     stat $? 
     echo -n "start the ${COMPONENT} Service :"
-    systemctl daemon-reload ${COMPONENT} &>> $LOGFILE
+    systemctl daemon-reload  &>> $LOGFILE
     systemctl enable ${COMPONENT} &>> $LOGFILE
     systemctl start ${COMPONENT}  &>> $LOGFILE
     Stat $?
@@ -77,8 +77,9 @@ MVN_PACKAGE()
 {
     echo -n "Preparing ${COMPONENT} artifacts :"
     cd /home/${APPUser}/${COMPONENT}
-    mvn clean package  &>> $LOGFILE
-    mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar &>> $LOGFILE
+    mvn clean package   &>> $LOGFILE
+    mv target/shipping-1.0.jar shipping.jar 
+    Stat $?
 }
 JAVA()
 {
