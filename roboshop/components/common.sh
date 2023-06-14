@@ -51,7 +51,7 @@ CONFIGURE_SVC()
     echo -n "Updating the $COMPONENT systemd file :"
     sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/' -e 's/USERHOST/user.roboshop.internal/' -e 's/CARTHOST/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${APPUser}/${COMPONENT}/systemd.service  
     mv /home/${APPUser}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
-    stat $? 
+    Stat $? 
     echo -n "start the ${COMPONENT} Service :"
     systemctl daemon-reload  &>> $LOGFILE
     systemctl enable ${COMPONENT} &>> $LOGFILE
