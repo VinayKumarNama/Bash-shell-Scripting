@@ -1,2 +1,4 @@
 #!/bin/bash
-echo "I am front end" 
+COMPONENT=payment
+source components/common.sh
+PYTHON

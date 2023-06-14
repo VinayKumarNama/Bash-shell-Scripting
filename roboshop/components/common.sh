@@ -92,3 +92,26 @@ JAVA()
     MVN_PACKAGE
     CONFIGURE_SVC 
 }
+PYTHON()
+{
+    echo -n "Installing Python and its dependencies :"
+    yum install python36 gcc python3-devel -y   &>> $LOGFILE 
+    Stat $? 
+
+    CREATE_USER                 # calling Create_user function to create the roboshop user account
+
+    DOWNLOAD_AND_EXTRACT         # calling DOWNLOAD_AND_EXTRACT  function download the content
+
+    echo -n "Installing $COMPONENT"
+    cd /home/${APPuser/${COMPONENT}/
+    pip3 install -r requirements.txt    &>> $LOGFILE 
+    Stat $?
+
+    USERID=$(id -u roboshop)
+    GROUPID=$(id -g roboshop) 
+
+    echo -n "Updating the uid and gid in the $COMPONENT.ini file"
+    sed -i -e "/^uid/ c uid=${USERID}" -e "/^gid/ c gid=${GROUPID}"  /home/${APPUser}/${COMPONENT}/${COMPONENT}.ini
+    
+    CONFIGURE_SVC
+}
