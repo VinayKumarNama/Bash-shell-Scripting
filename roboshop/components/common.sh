@@ -103,7 +103,7 @@ PYTHON()
     DOWNLOAD_AND_EXTRACT         # calling DOWNLOAD_AND_EXTRACT  function download the content
 
     echo -n "Installing $COMPONENT"
-    cd /home/${APPuser/${COMPONENT}/
+    cd /home/${APPuser}/${COMPONENT}/
     pip3 install -r requirements.txt    &>> $LOGFILE 
     Stat $?
 
