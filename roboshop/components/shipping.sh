@@ -1,2 +1,4 @@
 #!/bin/bash
-echo "I am front end" 
+COMPONENT=shipping
+source components/common.sh
+NODEJS
